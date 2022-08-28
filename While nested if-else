@@ -1,0 +1,46 @@
+/* Create a program that allows a user to login to their bank account if they enter their 
+personal identification number (PIN). Their PIN is a 4 digit number with a value of 1234. 
+If the user enters the incorrect value for the PIN they will be given an error message and 
+asked to enter their PIN again. The program will continue to prompt the user for their PIN 
+until the user enters the correct value or until they have tried three times. If the user is 
+successful in the first three attempts they should be given a message informing them that they 
+have successfully accessed their account. After three failed attempts, the user should be informed 
+that they will not be able to access their account because the user is only given three chances to 
+enter their PIN. 
+1. Ask user for PIN (4 digit: 1234)
+2. Give error message if it is incorrect, ask to re-enter PIN until it is correct or tried three times
+3. if user is successful in first three attempts, give message they successful accessed the account
+4. if failed three attempts, inform user they will have no access to the account because given three chances 
+*/
+
+import java.util.Scanner;
+    public class Main {
+        public static void main (String []args) {
+            
+            int pin = 1234;
+            int i = 0;
+           
+         
+             System.out.println ("Enter 4 digit PIN for access: ");
+             Scanner scan = new Scanner(System.in);
+             int keyboard = scan.nextInt();
+            
+            while (i < 3) {
+                if (keyboard == pin) {
+                    System.out.println ("You have access to the account");
+                    break;
+                }
+                else if (keyboard != pin) { 
+                    if (i == 2) { 
+                        System.out.println ("You have reach your limit. You do not have access to the account.");
+                        break;
+                     }
+                    } 
+                    
+                    System.out.println ("Try again.");
+                    keyboard = scan.nextInt();
+                    i++;
+                
+            }
+        }
+    }
