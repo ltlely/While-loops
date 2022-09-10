@@ -1,0 +1,41 @@
+/* Statistics are often calculated with varying amounts of input data. Write a program that takes any number of non-negative integers as input, and outputs the max and average. A negative integer ends the input and is not included in the statistics. Assume the input contains at least one non-negative integer.
+
+Output the average with two digits after the decimal point followed by a newline, which can be achieved as follows:
+System.out.printf("%.2f\n", average);
+
+INPUT: 15 20 0 3 -1
+OUTPUT: 20 9.50
+
+*/
+
+import java.util.Scanner; 
+
+public class LabProgram {
+   public static void main(String[] args) {
+
+      Scanner keyboard = new Scanner(System.in);
+      
+      int max = 0;
+      double total = 0;
+      int count = 0;
+      double average;
+      int input; 
+      
+      input = keyboard.nextInt();
+      
+      
+      while (input >= 0) {
+         if (input > max) {
+            max = input;
+         }
+         total = total + input;
+         ++count;
+         
+         input = keyboard.nextInt();
+      }
+      average = total / count;
+      
+      System.out.printf(max + " " + "%.2f\n", average);
+      
+   }
+}
