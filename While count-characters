@@ -1,0 +1,43 @@
+/* Write a program whose input is a character and a string, and whose output indicates the number of times the character appears in the string. 
+The output should include the input character and use the plural form, n's, if the number of times the characters appears is not exactly 1.
+
+INPUT: n Monday
+OUTPUT: 1 n
+
+OR 
+
+INPUT: z Today is Monday
+OUTPUT: 0 z's */
+
+import java.util.Scanner;
+
+public class LabProgram {
+   public static void main(String[] args) {
+      
+      Scanner keyboard = new Scanner(System.in);
+      
+       String word;
+       char letter;
+       
+       int count = 0;
+       int i = 0;
+      
+      letter = keyboard.next().charAt(0);
+      word = keyboard.nextLine();
+      
+      while (i < word.length()) {
+         if (word.charAt(i) == letter) {
+            count++;
+         }
+         i++;
+      }
+      
+      if (count == 1) {
+         System.out.println (count + " " + letter);
+      }
+      else {
+         System.out.println (count + " " + letter + "'s");
+      }
+      
+   }
+}
